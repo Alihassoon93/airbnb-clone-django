@@ -27,3 +27,16 @@ class Review(core_models.TimeStampedModel):
     # by defining a foreign key to a sspecific model, we can access the that specific model's fields
     def __str__(self):
         return f"{self.review} - {self.room}"
+
+    def rating_average(self):
+        avg = (
+            self.accuracy
+            + self.communication
+            + self.cleaniness
+            + self.location
+            + self.chick_in
+            + self.value
+        ) / 6
+        return round(avg, 2)
+
+    rating_average.short_description = "avg."
