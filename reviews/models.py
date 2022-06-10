@@ -24,7 +24,7 @@ class Review(core_models.TimeStampedModel):
         on_delete=models.CASCADE,
     )
 
-    # by defining a foreign key to a sspecific model, we can access the that specific model's fields
+    # by defining a foreign key to a specific model, we can access the that specific model's fields
     def __str__(self):
         return f"{self.review} - {self.room}"
 
