@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -147,7 +148,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 AUTH_USER_MODEL = "users.User"
 
 # for savng media files
-MEDIA_ROOT = Path.joinpath(BASE_DIR, "uploads")
+MEDIA_ROOT = os.path.join(BASE_DIR, "uploads")
 
 # handling whatever is uploaded to the uploads folder
 MEDIA_URL = "/media/"

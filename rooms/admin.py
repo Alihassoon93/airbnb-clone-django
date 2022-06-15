@@ -14,10 +14,18 @@ class ItemAdmin(admin.ModelAdmin):
         return obj.rooms.count()
 
 
+class PhotoInline(admin.TabularInline):
+    """Photo Inline Definition"""
+
+    model = models.Photo
+
+
 @admin.register(models.Room)
 class RoomAdmin(admin.ModelAdmin):
 
     """Room Admin Definition"""
+
+    inlines = (PhotoInline,)
 
     fieldsets = (
         (
@@ -100,6 +108,9 @@ class RoomAdmin(admin.ModelAdmin):
         "facities",
         "house_rules",
     )
+
+    # raw_id_fields is a list of fields you would like to change into an Input widget for a ForeignKey
+    raw_id_fields = ("host",)
 
     # "^"" means start with,
     search_fields = (
