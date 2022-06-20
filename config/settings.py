@@ -42,7 +42,7 @@ DJANGO_APPS = [
 ]
 
 # Third-party apps
-THIRD_PARTY_APPS = ["django_countries"]
+THIRD_PARTY_APPS = ["django_countries", "django_seed"]
 
 # User-defined apps
 PROJECT_APPS = [
